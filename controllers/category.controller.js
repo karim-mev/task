@@ -1,3 +1,11 @@
+const {
+  getCategories,
+  getCategoryById,
+  getCategoryByName,
+  createCategory,
+  updateCategory,
+} = require("../services/category.service");
+
 const getCategoriesCont = async (req, res) => {
   try {
     const categories = await getCategories();
@@ -5,7 +13,7 @@ const getCategoriesCont = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-}
+};
 
 const getCategoryByIdCont = async (req, res) => {
   try {
@@ -15,7 +23,7 @@ const getCategoryByIdCont = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-}
+};
 
 const getCategoryByNameCont = async (req, res) => {
   try {
@@ -25,7 +33,7 @@ const getCategoryByNameCont = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-}
+};
 
 const createCategoryCont = async (req, res) => {
   try {
@@ -35,7 +43,7 @@ const createCategoryCont = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-}
+};
 
 const updateCategoryCont = async (req, res) => {
   try {
@@ -45,7 +53,7 @@ const updateCategoryCont = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-}
+};
 
 module.exports = {
   getCategoriesCont,
