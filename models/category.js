@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('./your-sequelize-config'); // Replace with your actual Sequelize instance
+const db = require("../db/configSqlz");
 
-const Category = sequelize.define('Category', {
+const Category = db.define('Category', {
   CategoryID: {
     type: DataTypes.INTEGER,
     primaryKey: true,

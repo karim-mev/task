@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('./your-sequelize-config'); // Replace with your actual Sequelize instance
+const db = require("../db/configSqlz");
 
-const Deadline = sequelize.define('Deadline', {
+const Deadline = db.define('Deadline', {
   DeadlineID: {
     type: DataTypes.INTEGER,
     primaryKey: true,
