@@ -1,12 +1,13 @@
-const app = require("express")();
+const express = require("express");
+const app = express();
 require("dotenv").config();
-const users = require('./routes/users');
+const users = require('./routes/users.routes');
 const sequelize = require('./db/configSqlz');
 
 app.use(express.json());
-app.use(bodyParser.json());
 
 const bodyParser = require('body-parser');
+app.use(bodyParser.json);
 
 app.get("/", (req, res) => {
     res.status(200).send("tf monkey")
@@ -15,6 +16,6 @@ app.get("/", (req, res) => {
 app.use('/api', users);
 
 
-app.listen(4001, () => {
-    console.log(`my app is listening 4000`);
+app.listen(3001, () => {
+    console.log(`my app is listening 3001`);
 });

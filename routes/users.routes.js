@@ -14,3 +14,5 @@ router.get("/users/:username", getUserByUsernameCont);
 router.post("/users", createUserCont);
 router.put("/users/:username", updateUserCont);
 router.delete("/users/:username", deleteUserCont);
+
+module.exports = router;

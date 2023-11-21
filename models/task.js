@@ -1,5 +1,8 @@
 const { DataTypes } = require("sequelize");
 const db = require("../db/configSqlz");
+const User = require("./user");
+const Category = require("./category");
+
 
 const Task = db.define("Task", {
   TaskID: {
@@ -37,5 +40,9 @@ const Task = db.define("Task", {
     defaultValue: "not started",
   },
 });
+
+Task.belongsTo(User, { foreignKey: "UserID" });
+Task.belongsTo(Category, { foreignKey: "CategoryID" });
+
 
 module.exports = Task;

@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const db = require("../db/configSqlz");
+const Task = require('./task');
 
 const Deadline = db.define('Deadline', {
   DeadlineID: {
@@ -19,5 +20,7 @@ const Deadline = db.define('Deadline', {
     allowNull: false,
   },
 });
+
+Deadline.belongsTo(Task, { foreignKey: 'TaskID' });
 
 module.exports = Deadline;

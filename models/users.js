@@ -17,11 +17,13 @@ const Users = db.define("Users", {
     type: DataTypes.STRING(200),
     allowNull: false,
   },
+} , {
+  timestamps: false,
 });
 
 // Define association with another model
-Users.hasMany(OtherModel, {
-  onDelete: "CASCADE", // Enable cascade on delete
-});
+// Users.hasMany(OtherModel, {
+//   onDelete: "CASCADE", // Enable cascade on delete
+// });
 
 module.exports = Users;

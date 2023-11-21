@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const db = require("../db/configSqlz");
+const Task = require('./task');
 
 const Progress = db.define('Progress', {
   ProgressID: {
@@ -15,5 +16,7 @@ const Progress = db.define('Progress', {
     },
   },
 });
+
+Progress.belongsTo(Task, { foreignKey: 'TaskID' });
 
 module.exports = Progress;
